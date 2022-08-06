@@ -7,7 +7,7 @@ on: [push]
 
 jobs:
   my_tests:
-  # «Раннер» — создание изолированного окружения с последней версией Ubuntu
+    # «Раннер» — создание изолированного окружения с последней версией Ubuntu
     runs-on: ubuntu-latest
 
 
@@ -16,8 +16,8 @@ jobs:
     # для клонирования репозитория
     - uses: actions/checkout@v3
     - name: Set up Python
-      # Запуск из actions setup-python — готового скрипта 
-      # для развёртывания окружения Python
+    # Запуск из actions setup-python — готового скрипта 
+    # для развёртывания окружения Python
       
       uses: actions/setup-python@v3
       with:
@@ -28,13 +28,13 @@ jobs:
     run: |
       # обновление pip
       python -m pip install --upgrade pip 
-        # установка flake8 и его плагинов
-        pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
-        # установка зависимостей
-        pip install -r requirements.txt 
+      # установка flake8 и его плагинов
+      pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
+      # установка зависимостей
+      pip install -r requirements.txt 
 
     - name: Test with flake8 and django tests
-      run: |
+    run: |
         # запуск проверки проекта по flake8
         python -m flake8
         # перейти в папку, содержащую manage.py — 
