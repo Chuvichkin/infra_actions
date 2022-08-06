@@ -2,14 +2,12 @@
 
 name: My test workflow(add check for PEP8)
 
-
 on: [push]
 
 jobs:
   my_tests:
-    # «Раннер» — создание изолированного окружения с последней версией Ubuntu
+  # «Раннер» — создание изолированного окружения с последней версией Ubuntu
     runs-on: ubuntu-latest
-
 
     steps:
     # Запуск actions checkout — готового скрипта 
@@ -19,10 +17,10 @@ jobs:
     # Запуск из actions setup-python — готового скрипта 
     # для развёртывания окружения Python
       
-      uses: actions/setup-python@v3
-      with:
-        # Выбор версии Python
-        python-version: 3.7
+    uses: actions/setup-python@v3
+    with:
+    # Выбор версии Python
+      python-version: 3.7
     
     - name: Install dependencies
     run: |
