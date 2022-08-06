@@ -5,8 +5,8 @@ name: My test workflow(add check for PEP8)
 on: [push]
 
 jobs:
-  my_tests:
-    runs-on: ubuntu-latest
+my_tests:
+runs-on: ubuntu-latest
 
     steps:
     # Запуск actions checkout — готового скрипта
